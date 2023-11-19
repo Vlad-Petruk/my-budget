@@ -1,12 +1,12 @@
-body{
+html,body{
     margin: 0;
     padding: 0;
-    
+    height: 100%;
 }
 
 .main-container{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 
     background-color: black;
     color: white;
@@ -20,4 +20,53 @@ body{
 
     height: 70px;
     border-bottom: 2px solid white;
+}
+
+.main-content{
+    display: flex;
+    height: 83%;
+}
+
+.left-side{
+    flex-grow: 5;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator{
+    flex-grow: 1;
+    border-bottom: 1px solid white;
+    display: flex;
+}
+
+.potentialInc-inp{
+    flex-grow: 1;
+}
+
+.potentialInc-total{
+    flex-grow: 1;
+}
+
+.form{
+    display:block;
+}
+
+#potentialInc{
+    padding: 5px;
+    margin: 5px 0;
+    width: 80%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: right;
+}
+
+.spendings{
+    flex-grow: 5;
+}
+
+.right-side{
+    flex-grow: 1;
+    border: 1px solid white;
 }
