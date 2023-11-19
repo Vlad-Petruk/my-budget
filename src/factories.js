@@ -10,7 +10,6 @@ const potentialMonthlyIncome = (dailySalary) => {
     }
 
     total += dailySalary;
-    console.log(total)
 
     addToLocalStorage('potential monthly income', total);
     return {
@@ -18,9 +17,10 @@ const potentialMonthlyIncome = (dailySalary) => {
     }
 }
 
-const sushiCashIntoSalary = (cash) => {
-    let dailySalary = cash * 0.025 + 750;
-    addToLocalStorage(`daily income ${new Date()}`,dailySalary)
+const sushiCashIntoSalary = (cash,date) => {
+    let dailySalary = Math.round(cash * 0.025 + 750);
+    let thisDate = date
+    // addToLocalStorage(`daily income ${thisDate}`,dailySalary)
     return {dailySalary}
 }
 

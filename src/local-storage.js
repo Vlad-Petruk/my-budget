@@ -1,6 +1,8 @@
+import { format } from "date-fns";
+
 function addToLocalStorage(key, value) {
     try {
-        const timestamp = new Date().toISOString();
+        const timestamp = format((new Date),'PP');
 
         const data = {
           value: value,

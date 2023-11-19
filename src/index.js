@@ -1,8 +1,10 @@
 import { addToLocalStorage, getFromLocalStorage,removeFromLocalStorage } from "./local-storage";
 import { sushiCashIntoSalary, potentialMonthlyIncome } from "./factories";
+import { calculatePotentialIncome,onloadListener } from "./UI";
 
-let friday = sushiCashIntoSalary(20000);
-let sunday = sushiCashIntoSalary(8000);
+onloadListener()
+// let friday = sushiCashIntoSalary(20000, 'Nov 14');
+// let sunday = sushiCashIntoSalary(8000, 'Nov 19');
 
 
 // I want to calculate potential salary incom
@@ -10,3 +12,5 @@ let sunday = sushiCashIntoSalary(8000);
 // To be able to see how much money people owe me
 // keep track with my spendings
 // planed or potential spendings
+
+// I need to fire up dfm(packadge for date
