@@ -1,6 +1,6 @@
 import { addToLocalStorage, getFromLocalStorage,removeFromLocalStorage } from "./local-storage";
 import { sushiCashIntoSalary, potentialMonthlyIncome } from "./factories";
-import { calculatePotentialIncome,onloadListener } from "./UI";
+import { calculatePotentialIncome,onloadListener,incomeHandler } from "./UI";
 
 onloadListener()
 // let friday = sushiCashIntoSalary(20000, 'Nov 14');

@@ -16,7 +16,6 @@ const potentialMonthlyIncome = (dailySalary) => {
         total 
     }
 }
-
 const sushiCashIntoSalary = (cash,date) => {
     let dailySalary = Math.round(cash * 0.025 + 750);
     let thisDate = date
