@@ -28,7 +28,7 @@ html,body{
 }
 
 .left-side{
-    flex-grow: 5;
+    flex-grow: 4;
     border: 1px solid white;
     display: flex;
     flex-direction: column;
@@ -41,7 +41,10 @@ html,body{
 }
 
 .potentialInc-inp{
-    flex-grow: 1;
+    flex-grow: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .potentialInc-total{
@@ -53,20 +56,36 @@ html,body{
 }
 
 #potentialInc{
-    padding: 5px;
+    padding: 2px;
     margin: 5px 0;
-    width: 80%;
+    width: 30%;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
     text-align: right;
 }
 
+.actual-income{
+    border-bottom: 1px solid white;
+    flex-grow: 1;
+}
+
 .spendings{
-    flex-grow: 5;
+    flex-grow: 8;
 }
 
 .right-side{
     flex-grow: 1;
     border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+}
+
+.oweMe{
+    flex-grow: 1;
+    border-bottom: 1px solid white;
+}
+
+.total{
+    flex-grow: 5;
 }

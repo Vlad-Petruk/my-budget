@@ -20,15 +20,43 @@
                             <button type="button" id="dailyIncomeBtn">Calculate</button>
                         </div>
                         <div class="daily-income">Daily income:</div>
-                        <button type="button" id="new-period">Start new period</button>
+                        
                     </div>
                     <div class="potentialInc-total">
-                        Total:
+                        <h1 class="potentialTwoWeek">Potential 2 week total:</h1>
+                        <button type="button" id="new-period">Start new period</button>
                     </div>
                 </div>
+                <div class="actual-income">
+                    <form>
+                        <label for="option1">UAH</label>
+                        <input type="radio" id="option1" name="options" value="UAH" checked>
+                      
+                        <label for="option2">USD</label>
+                        <input type="radio" id="option2" name="options" value="USD">
+                      </form>
+                    <label for="actualInc">Income:</label>
+                    <input type="number" id="actualInc" name="actualInc">
+                    <button type="button" id="addIncomeBtn">Add</button>
+        </div>
                 <div class="spendings">asd</div>
             </div>
-            <div class="right-side">asafsf</div>
+            <div class="right-side">
+                <div class="oweMe">
+                    <h2>People owe me:</h2>
+                </div>
+                <div class="total">
+                    <div class="totalUAH">
+                        I have in UAH:
+                    </div>
+                    <div class="totalUSD">
+                        I have in USD:
+                    </div>
+                    <div class="totalAll">
+                        I have in fact:
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
