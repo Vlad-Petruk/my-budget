@@ -23,4 +23,25 @@ const sushiCashIntoSalary = (cash,date) => {
     return {dailySalary}
 }
 
-export {sushiCashIntoSalary,potentialMonthlyIncome}
+const addIncome = (income,save,currency)=>{
+    let storageIncome = getFromLocalStorage('UAH income');
+    removeFromLocalStorage('UAH income');
+    let total = 0;
+
+    if (storageIncome !== null) {
+        storageIncome.value = parseInt(storageIncome.value);
+        total += storageIncome.value;
+        console.log(typeof(storageIncome.value));
+    }
+    
+    let incomeNumb = parseInt(income.value);
+    console.log(typeof(incomeNumb));
+    total += incomeNumb;
+    
+
+    save.textContent= `I have in ${currency}: ${total}`;
+
+    addToLocalStorage(`${currency} income`, total);
+}
+
+export {sushiCashIntoSalary,potentialMonthlyIncome,addIncome}

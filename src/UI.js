@@ -1,4 +1,4 @@
-import { sushiCashIntoSalary, potentialMonthlyIncome } from "./factories";
+import { sushiCashIntoSalary, potentialMonthlyIncome,addIncome} from "./factories";
 import { addToLocalStorage, getFromLocalStorage,removeFromLocalStorage } from "./local-storage";
 
 // Potential income
@@ -20,7 +20,16 @@ startNewPeriod.addEventListener('click',()=>{
 const onloadListener = () =>{
     window.addEventListener('load',()=>{
         let potentialTotal = getFromLocalStorage('potential monthly income');
-        potentialIncTotal.textContent = `Potential 2 week total: ${potentialTotal.value}`
+        if(potentialTotal !== null){
+        potentialIncTotal.textContent = `Potential 2 week total: ${potentialTotal.value}`;
+        }
+        let UAHtotal = getFromLocalStorage('UAH income');
+        let USDtotal = getFromLocalStorage('USD income');
+
+        if(UAHtotal !== null&USDtotal !== null){
+        totalUAH.textContent = `I have in UAH: ${UAHtotal.value}`;
+        totalUSD.textContent = `I have in USD: ${USDtotal.value}`;
+        }
     })
 }
 
@@ -45,10 +54,10 @@ const totalUAH = document.querySelector('.totalUAH');
 const totalUSD = document.querySelector('.totalUSD');
 const totalAll = document.querySelector('.totalAll');
 
-const addIncome = (income,save,currency)=>{
-    save.textContent= `I have in ${currency}: ${income.value}`
-    // income.value = 0;
-}
+// const addIncome = (income,save,currency)=>{
+//     save.textContent= `I have in ${currency}: ${income.value}`;
+//     addToLocalStorage(`${currency} income`, income.value)
+// }
 
 const incomeHandler = () => {
     let selectedCurrency = '';
@@ -65,19 +74,6 @@ const incomeHandler = () => {
         addIncome(actualIncInput, totalUAH, 'UAH');
     }
 };
-
-// const incomeHandler = ()=>{
-//     for (let i = 0; i < radioButtons.length; i++){
-//         console.log( radioButtons[i].value)
-//         if (radioButtons[i].value !== 'UAH'&&radioButtons[i].value === 'USD'&&radioButtons[i].checked){
-//         addIncome(actualIncInput,totalUSD,'USD');
-//         return;
-//         } else if (radioButtons[i].value !== 'USD') {
-//         addIncome(actualIncInput,totalUAH,'UAH');
-//         }
-//     };   
-// }
-
 
 addIncomeBtn.addEventListener('click',()=>{
     incomeHandler()
