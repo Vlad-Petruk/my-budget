@@ -34,7 +34,7 @@
                       
                         <label for="option2">USD</label>
                         <input type="radio" id="option2" name="options" value="USD">
-                      </form>
+                    </form>
                     <label for="actualInc">Income:</label>
                     <input type="number" id="actualInc" name="actualInc">
                     <button type="button" id="addIncomeBtn">Add</button>
@@ -43,7 +43,17 @@
             </div>
             <div class="right-side">
                 <div class="oweMe">
-                    <h2>People owe me:</h2>
+                    <h2 class="totalOwe">People owe me:</h2>
+                    <div class="lent">
+                        <label for="lentMoney">Lent money:</label>
+                        <input type="number" id="lentMoney" name="lentMoney">
+                        <button type="button" id="lentBtn">Add</button>
+                    </div>
+                    <div class="return">
+                        <label for="returnedMoney">Returned money:</label>
+                        <input type="number" id="returnedMoney" name="returnedMoney">
+                        <button type="button" id="returnedBtn">Add</button>
+                    </div>
                 </div>
                 <div class="total">
                     <div class="totalUAH">
