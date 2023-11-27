@@ -1,4 +1,5 @@
 import { addToLocalStorage, getFromLocalStorage,removeFromLocalStorage } from "./local-storage";
+import { totalAllCalculate } from "./UI";
 
 const potentialMonthlyIncome = (dailySalary) => {
     let storageMonthlyData = getFromLocalStorage('potential monthly income');
@@ -24,8 +25,8 @@ const sushiCashIntoSalary = (cash,date) => {
 }
 
 const addIncome = (income,save,currency)=>{
-    let storageIncome = getFromLocalStorage('UAH income');
-    removeFromLocalStorage('UAH income');
+    let storageIncome = getFromLocalStorage(`${currency} income`);
+    removeFromLocalStorage(`${currency} income`);
     let total = 0;
 
     if (storageIncome !== null) {
@@ -44,4 +45,32 @@ const addIncome = (income,save,currency)=>{
     addToLocalStorage(`${currency} income`, total);
 }
 
-export {sushiCashIntoSalary,potentialMonthlyIncome,addIncome}
+const oweMeHandler = (money, save, operation)=>{
+    let storageOwe = getFromLocalStorage(`Lent money`);
+    removeFromLocalStorage(`Lent money`);
+    let total = 0;
+
+    let moneyNumb = parseInt(money.value);
+
+    if(storageOwe !== null){
+        if (operation === 'lent') {
+            storageOwe.value = parseInt(storageOwe.value);
+            total += storageOwe.value;
+            total += moneyNumb;
+        } else {
+            storageOwe.value = parseInt(storageOwe.value);
+            total += storageOwe.value;
+            total -= moneyNumb;
+        }
+    }
+    save.textContent= `People owe me: ${total}`;
+
+    addToLocalStorage(`Lent money`, total);
+}
+
+export {
+    sushiCashIntoSalary,
+    potentialMonthlyIncome,
+    addIncome,
+    oweMeHandler
+}
