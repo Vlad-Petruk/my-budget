@@ -80,7 +80,34 @@ button {
 
 .spendings{
     flex-grow: 8;
+    display: flex;
 }
+
+.regular-expenses{
+    flex: 1;
+    flex-basis: 50%;
+}
+
+.irregular-expenses{
+    flex: 1;
+    flex-basis: 50%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-header{
+    text-align: center;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
 
 .right-side{
     flex-grow: 1;
